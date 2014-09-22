@@ -22,17 +22,16 @@ html
             ul.nav-list
               li.nav-item = link_to 'Twitter', 'https://twitter.com/kbaba1001', class: 'pure-button'
               li.nav-item = link_to 'GitHub', 'https://github.com/kbaba1001', class: 'pure-button'
-
       .content.pure-u-3-4
         .posts
           div
-            | Tags
+            | Tags:
             - blog.tags.each do |tag, articles|
               = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
           == yield
         .footer
-          .pure-menu.pure-menu-horizontal.pure-menu-open
-            ul
-              li = link_to 'Top', '/'
-              li = link_to 'Twitter', 'https://twitter.com/kbaba1001'
-              li = link_to 'GitHub', 'https://github.com/kbaba1001'
+          .pure-menu-horizontal.pure-menu-open
+            ol
+              li = link_to 'Designed with "Pure".', 'http://purecss.io/'
+              li = link_to 'Code licensed under "Yahoo BSD License".', 'https://github.com/yahoo/pure-site/blob/master/LICENSE.md'
+              li = link_to 'Documentation under "CC BY 3.0".', 'http://creativecommons.org/licenses/by/3.0/'
