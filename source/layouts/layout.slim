@@ -16,7 +16,7 @@ html
     #layout.pure-g
       .sidebar.pure-u-1-4
         .header
-          h1.brand-title = blog_name
+          h1.brand-title = link_to blog_name, '/'
           h2.brand-tagline Rails/Linux/Poem
           nav.nav
             ul.nav-list
@@ -25,7 +25,10 @@ html
 
       .content.pure-u-3-4
         .posts
-          h1.content-subhead Recent Articles
+          div
+            | Tags
+            - blog.tags.each do |tag, articles|
+              = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
           == yield
         .footer
           .pure-menu.pure-menu-horizontal.pure-menu-open

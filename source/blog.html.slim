@@ -1,4 +1,0 @@
-= wrap_layout :layout do
-  -# TODO 10 がベタ書きなのを直す
-  - blog.articles[0...10].each do |article|
-    = partial :article, locals: {title: article.title, date: article.date, path: article, body: article.body}

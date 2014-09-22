@@ -3,6 +3,7 @@ section.post
     h2.post-title = title
     p.post-meta
       = link_to date.strftime('%F %R '), path
-      - blog.tags.each do |tag, articles|
-        = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
+      - if data.page.tags
+        - data.page.tags.split.each do |tag|
+          = link_to tag, tag_path(tag), class: 'post-category post-category-design'
   .post-description == body
