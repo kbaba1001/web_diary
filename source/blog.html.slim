@@ -1,0 +1,11 @@
+= wrap_layout :layout do
+  -# TODO 10 がベタ書きなのを直す
+  - blog.articles[0...10].each do |article|
+    section.post
+      header.post-header
+        h2.post-title = article.title
+        p.post-meta
+          = link_to article.date.strftime('%F %R '), article
+          - blog.tags.each do |tag, articles|
+            = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
+      .post-description == article.body
