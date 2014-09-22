@@ -1,9 +1,2 @@
 = wrap_layout :layout do
-  section.post
-    header.post-header
-      h2.post-title = data.page.title
-      p.post-meta
-        = link_to data.page.date, ''
-        - blog.tags.each do |tag, articles|
-          = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
-    .post-description == yield
+  = partial :article, locals: {title: data.page.title, date: Time.parse(data.page.date), path: '', body: yield}

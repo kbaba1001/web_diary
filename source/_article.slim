@@ -1,0 +1,8 @@
+section.post
+  header.post-header
+    h2.post-title = title
+    p.post-meta
+      = link_to date.strftime('%F %R '), path
+      - blog.tags.each do |tag, articles|
+        = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
+  .post-description == body
