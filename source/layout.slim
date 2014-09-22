@@ -1,4 +1,4 @@
-- blog_name = 'kbaba1001のブログ'
+- blog_name = 'kbaba1001 Blog'
 doctype html
 html
   head
@@ -20,12 +20,8 @@ html
           h2.brand-tagline Rails/Linux/Poem
           nav.nav
             ul.nav-list
-              li.nav-item
-                a.pure-button[href="http://purecss.io"]
-                  | Pure
-              li.nav-item
-                a.pure-button[href="http://yuilibrary.com"]
-                  | YUI Library
+              li.nav-item = link_to 'Twitter', 'https://twitter.com/kbaba1001', class: 'pure-button'
+              li.nav-item = link_to 'GitHub', 'https://github.com/kbaba1001', class: 'pure-button'
       .content.pure-u-3-4
         div
           .posts
