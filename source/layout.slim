@@ -1,3 +1,4 @@
+- blog_name = 'kbaba1001のブログ'
 doctype html
 html
   head
@@ -5,22 +6,18 @@ html
     meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta name="description" content="A blog of @kbaba1001"
-    == stylesheet_link_tag "http://yui.yahooapis.com/pure//pure.css"
-    == stylesheet_link_tag "http://yui.yahooapis.com/pure//grids-responsive.css"
+    == stylesheet_link_tag "http://yui.yahooapis.com/pure/0.5.0/pure-min.css"
+    == stylesheet_link_tag "http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css"
     == stylesheet_link_tag "all"
     == javascript_include_tag "all"
-    title
-      | Blog Title
-      = ' - ' + current_article.title unless current_article.nil?
-    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    == feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    title = data.page.title ? "#{data.page.title} - #{blog_name}" : blog_name
   body
     #layout.pure-g
-      .sidebar.pure-u-1.pure-u-md-1-4
+      .sidebar.pure-u-1-4
         .header
-          h1.brand-title
-            | A Sample Blog
-          h2.brand-tagline
-            | hoge
+          h1.brand-title = blog_name
+          h2.brand-tagline Rails/Linux/Poem
           nav.nav
             ul.nav-list
               li.nav-item
@@ -29,7 +26,7 @@ html
               li.nav-item
                 a.pure-button[href="http://yuilibrary.com"]
                   | YUI Library
-      .content.pure-u-1.pure-u-md-3-4
+      .content.pure-u-3-4
         div
           .posts
             h1.content-subhead
