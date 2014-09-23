@@ -1,2 +1,2 @@
 = wrap_layout :layout do
-  = partial :article, locals: {title: data.page.title, date: Time.parse(data.page.date), path: '', body: yield}
+  = partial :article, locals: {date: Time.parse(data.page.date), body: yield}

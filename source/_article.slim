@@ -1,9 +1,10 @@
 section.post
   header.post-header
-    h2.post-title = title
+    - path = blog_day_path(*date.strftime('%Y/%m/%d').split(?/).map(&:to_i))
+    h2.post-title = link_to date.strftime('%F %R '), path
     p.post-meta
-      = link_to date.strftime('%F %R '), path
       - if data.page.tags
+        | Tags:
         - data.page.tags.split.each do |tag|
           = link_to tag, tag_path(tag), class: 'post-category post-category-design'
   .post-description == body

@@ -10,7 +10,7 @@ per_page: 10
 
 -# TODO 10 がベタ書きなのを直す
 - page_articles.each do |article|
-  = partial :article, locals: {title: article.title, date: article.date, path: article, body: article.body}
+  = partial :article, locals: {date: article.date, body: article.body}
 
 - if paginate
   - if next_page
