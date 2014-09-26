@@ -1,9 +1,6 @@
 section.post
   header.post-header
-    - # TODO title_helper があったほうがいいかなぁ
-    - #   date => 2014/09/26
-    - #   title => 223450
-    h2.post-title = link_to "#{date} #{title}", path
+    h2.post-title = link_to display_title(title, date), path
     p.post-meta
       - if data.page.tags
         | Tags:
