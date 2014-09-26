@@ -1,7 +1,9 @@
 section.post
   header.post-header
-    - path = blog_day_path(*date.strftime('%Y/%m/%d').split(?/).map(&:to_i))
-    h2.post-title = link_to date.strftime('%F %R '), path
+    - # TODO title_helper があったほうがいいかなぁ
+    - #   date => 2014/09/26
+    - #   title => 223450
+    h2.post-title = link_to "#{date} #{title}", path
     p.post-meta
       - if data.page.tags
         | Tags:
