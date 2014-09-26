@@ -1,6 +1,6 @@
 xml.instruct!
 xml.feed 'xmlns' => 'http://www.w3.org/2005/Atom' do
-  site_url = 'kbaba1001.github.io'
+  site_url = 'http://kbaba1001.github.io/'
   xml.title 'KBABA1001\'S WEB DIARY'
   xml.subtitle 'Rails/Linux/Poem'
   xml.id URI.join(site_url, blog.options.prefix.to_s)
