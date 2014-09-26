@@ -28,6 +28,7 @@ activate :blog do |blog|
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
+  blog.new_article_template = 'article_template.tt'
   blog.default_extension = '.md'
 
   blog.tag_template = 'tag.html'
