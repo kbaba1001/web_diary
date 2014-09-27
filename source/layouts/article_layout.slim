@@ -2,3 +2,4 @@
   h2.post-title = data.page.date.strftime('%F')
   = twitter_button_tag
   = partial :article, locals: {title: data.page.title, path: '', body: yield}
+  = disqus

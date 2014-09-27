@@ -109,8 +109,23 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  # middleman-disqus
+  activate :disqus do |d|
+    d.shortname = 'kbaba1001githubio'
+  end
 end
 
+# middleman-disqus
+configure :development do
+  activate :disqus do |d|
+    # using a special shortname
+    # d.shortname = "development-shortname"
+    d.shortname = nil
+  end
+end
+
+# middleman-deploy
 activate :deploy do |deploy|
   deploy.method = :git
   # Optional Settings
