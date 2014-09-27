@@ -1,3 +1,6 @@
 task :diary do
-  sh "middleman article #{Time.now.strftime('%H%M%S')}"
+  year, month, time = Time.now.strftime('%Y %m %H%M%S').split
+
+  sh "mkdir -p source/blog/#{year}/#{month}/"
+  sh "middleman article #{time}"
 end
