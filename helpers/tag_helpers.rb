@@ -1,6 +1,6 @@
 require 'active_support/core_ext/string/strip'
 
-module TwitterButtonHelpers
+module TagHelpers
   def twitter_button_tag
     <<-HTML.strip_heredoc
     <a href="https://twitter.com/share" class="twitter-share-button" data-via="kbaba1001">Tweet</a>
