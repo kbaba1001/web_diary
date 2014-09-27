@@ -11,7 +11,7 @@ html
     == stylesheet_link_tag "all"
     == javascript_include_tag "all"
     == feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
-    title = data.page.title ? "#{data.page.title} - #{blog_name}" : blog_name
+    title = blog_name
   body
     #layout.pure-g
       .sidebar.pure-u-1-4
@@ -24,10 +24,11 @@ html
               li.nav-item = link_to 'GitHub', 'https://github.com/kbaba1001', class: 'pure-button'
       .content.pure-u-3-4
         .posts
-          div
-            | Tags:
-            - blog.tags.each do |tag, articles|
-              = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
+          - if blog.tags.present?
+            div
+              | Tags:
+              - blog.tags.each do |tag, articles|
+                = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
           == yield
         .footer
           .pure-menu-horizontal.pure-menu-open
