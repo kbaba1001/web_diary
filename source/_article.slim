@@ -4,6 +4,6 @@ section.post
     p.post-meta
       - if data.page.tags
         | Tags:
-        - data.page.tags.split.each do |tag|
+        - data.page.tags.split(?,).each do |tag|
           = link_to tag, tag_path(tag), class: 'post-category post-category-design'
   .post-description == body
