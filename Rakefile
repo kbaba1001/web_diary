@@ -5,3 +5,8 @@ task :diary do
   sh "middleman article #{time}"
   sh "geany source/blog/#{year}/#{month}/#{day}-#{time}.html.md &"
 end
+
+task :deploy do
+  sh 'middleman deploy -b'
+  sh 'curl http://blogsearch.google.co.jp/ping\?url\=http://kbaba1001.github.io/feed.xml'
+end
