@@ -25,4 +25,9 @@ module TagHelpers
       <gcse:search></gcse:search>
     HTML
   end
+
+  def gravator_image_tag
+    gravator_url = 'http://www.gravatar.com/avatar/b49aa473d5cd7f08cdce3d56ef837f29?s=100'
+    tag(:img, src: gravator_url, alt: 'kbaba1001 profile photo')
+  end
 end

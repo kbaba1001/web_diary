@@ -32,6 +32,7 @@ html
                   = link_to "#{tag} (#{articles.size})", tag_path(tag), class: 'post-category post-category-design'
           .pure-u-1-3
             = google_search_tag
+        = partial :profile
         .footer
           .pure-menu-horizontal.pure-menu-open
             ol
