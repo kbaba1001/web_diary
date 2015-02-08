@@ -134,7 +134,7 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   # Optional Settings
-  deploy.remote   = 'https://github.com/kbaba1001/kbaba1001.github.io.git' # remote name or git url, default: origin
+  #deploy.remote   = 'git@github.com:kbaba1001/kbaba1001.github.io.git' # remote name or git url, default: origin
   deploy.branch   = 'master' # default: gh-pages
   deploy.strategy = :force_push      # commit strategy: can be :force_push or :submodule, default: :force_push
   deploy.commit_message = "diary #{Time.now.strftime('%F %T')}"      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
