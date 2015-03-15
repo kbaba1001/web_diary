@@ -8,7 +8,7 @@ end
 
 task :create do
   sh 'git add -A .'
-  sh 'git commit -m \"diary $(date --rfc-3339=second)\"'
+  sh "git commit -m 'diary #{Time.now}'"
   sh 'git push -u origin master'
   Rake::Task['deploy'].invoke
 end
