@@ -3,7 +3,7 @@ task :new do
 
   sh "mkdir -p source/blog/#{year}/#{month}/"
   sh "middleman article #{time}"
-  sh "remarkable source/blog/#{year}/#{month}/#{day}-#{time}.html.md &"
+  sh "$BUNDLER_EDITOR source/blog/#{year}/#{month}/#{day}-#{time}.html.md &"
 end
 
 task :create do
